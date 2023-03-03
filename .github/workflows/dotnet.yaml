@@ -16,7 +16,7 @@ on:
 
 jobs:
 
-  build-and-test-Linux:
+  build-and-test-LINUX:
     runs-on: ubuntu-latest
     steps:
       - name: Clone FoodManager-Backend repository
@@ -77,11 +77,11 @@ jobs:
       #   working-directory: FoodManagerTest
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}\Build_Artifact
+        run: dotnet publish -c Release -o C:\Program Files\dotnet\Build_Artifact
         working-directory: FoodManagerApi
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: Artifact-${{ runner.os }}_${{ runner.arch }}-${{ github.sha }}
-          path: ${{env.DOTNET_ROOT}}\Build_Artifact
+          path: C:\Program Files\dotnet\Build_Artifact
