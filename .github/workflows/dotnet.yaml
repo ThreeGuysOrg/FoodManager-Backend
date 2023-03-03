@@ -30,11 +30,11 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Restore dependencies
-        run: dotnet restore --interactive
+        run: dotnet restore
         working-directory: FoodManagerApi
 
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build
         working-directory: FoodManagerApi
 
       # - name: Test
@@ -47,5 +47,5 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: .net-app
-          path: /home/runner/work/FoodManager-Backend/FoodManager-Backend/FoodManagerApi/FoodManagerApi/bin/Debug/
+          name: Artifact-$GITHUB_RUN_NUMBER
+          path: /home/runner/work/FoodManager-Backend/FoodManager-Backend/FoodManagerApi/FoodManagerApi/bin/Release/
