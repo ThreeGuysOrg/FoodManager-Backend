@@ -1,4 +1,4 @@
-[![Build and Test](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/dotnet_ci.yaml/badge.svg)](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/dotnet_ci.yaml)
+[![Build and Test](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/dotnet.yaml/badge.svg)](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/dotnet.yaml)
 
 # FoodManager-Backend
 
