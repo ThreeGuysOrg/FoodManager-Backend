@@ -27,12 +27,12 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore --interactive
-        working-directory: FoodManager-Backend
+        working-directory: FoodManagerApi
 
       - name: Build
         run: dotnet build --no-restore
-        working-directory: FoodManager-Backend/FoodManagerApi
+        working-directory: FoodManagerApi
 
       # - name: Test
       #   run: dotnet test --no-build --verbosity normal
-      #   working-directory: FoodManager-Backend/FoodManagerTest
+      #   working-directory: FoodManagerTest
