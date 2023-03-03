@@ -30,13 +30,6 @@ jobs:
         run: dotnet restore --interactive
         working-directory: FoodManagerApi
 
-      - name: Format code style
-        run: |
-          dotnet format whitespace --verbosity normal
-          dotnet format style --verbosity normal
-          dotnet format analyzers --verbosity normal
-        working-directory: FoodManagerApi
-
       - name: Build
         run: dotnet build --no-restore --configuration Release
         working-directory: FoodManagerApi
