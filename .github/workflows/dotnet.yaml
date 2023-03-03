@@ -48,5 +48,5 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: Artifact-${{ runner.os }}-${{ github.ref }}
+          name: Artifact-${{ runner.os }}-${{ runner.arch }}-${{ github.sha }}
           path: ${{env.DOTNET_ROOT}}/Build_Artifact
