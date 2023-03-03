@@ -26,8 +26,8 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Restore dependencies
-        run: dotnet restore
-        working-directory: FoodManager-Backend
+        run: dotnet restore --interactive
+        #working-directory: FoodManager-Backend
 
       - name: Build
         run: dotnet build --no-restore
