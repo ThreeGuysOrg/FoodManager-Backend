@@ -45,5 +45,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: artifat-$GITHUB_RUN_NUMBER
-          path: Builds/artifat-$GITHUB_RUN_NUMBER.txt
+          path: ~/FoodManager-Backend/
           retention-days: 7
