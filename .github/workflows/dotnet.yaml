@@ -44,6 +44,6 @@ jobs:
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v3
         with:
-          name: Builds
-          path: build-$GITHUB_RUN_NUMBER.txt
+          name: artifat-$GITHUB_RUN_NUMBER
+          path: Builds/artifat-$GITHUB_RUN_NUMBER.txt
           retention-days: 7
