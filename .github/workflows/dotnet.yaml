@@ -48,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: /home/runner/work/FoodManager-Backend/FoodManager-Backend/FoodManagerApi/FoodManagerApi/bin/Debug/net6.0/FoodManagerApi.dll
+          path: /home/runner/work/FoodManager-Backend/FoodManager-Backend/FoodManagerApi/FoodManagerApi/bin/Debug/
