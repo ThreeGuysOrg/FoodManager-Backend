@@ -27,7 +27,8 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Format code style
-        run: dotnet format --verbosity normal
+        run: dotnet format --verbosity normal --folder
+        working-directory: FoodManagerApi
 
       - name: Restore dependencies
         run: dotnet restore --interactive
