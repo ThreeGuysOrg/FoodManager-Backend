@@ -34,19 +34,18 @@ jobs:
         working-directory: FoodManagerApi
 
       - name: Build
-        run: dotnet build
+        run: dotnet build --configuration Release
         working-directory: FoodManagerApi
 
       # - name: Test
       #   run: dotnet test --no-build --verbosity normal
       #   working-directory: FoodManagerTest
 
-      # - name: dotnet publish
-      #   run: dotnet publish -c Release -o /home/runner/work/FoodManager-Backend/FoodManager-Backend/FoodManagerApi/
-      #   working-directory: FoodManagerApi
+      - name: dotnet publish
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/Build_Artifact
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: Artifact-$GITHUB_RUN_NUMBER
-          path: /home/runner/work/FoodManager-Backend/FoodManager-Backend/
+          path: ${{env.DOTNET_ROOT}}/Build_Artifact
