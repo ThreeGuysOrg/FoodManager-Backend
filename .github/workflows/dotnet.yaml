@@ -2,7 +2,7 @@ name: Build and Test
 
 on:
   push:
-    branches: [main, stage, develop]
+    branches: [main, stage]
     paths-ignore:
       - "README.md"
   pull_request:
