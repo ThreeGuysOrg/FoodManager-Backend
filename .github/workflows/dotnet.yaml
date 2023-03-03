@@ -41,8 +41,8 @@ jobs:
       #   run: dotnet test --no-build --verbosity normal
       #   working-directory: FoodManagerTest
 
-      # - name: dotnet publish
-      #   run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/FoodManager-Backend
+      - name: dotnet publish
+        run: dotnet publish -c Release -o /home/runner/work/FoodManager-Backend/FoodManager-Backend/FoodManagerApi/FoodManagerApi/bin/Release/
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
