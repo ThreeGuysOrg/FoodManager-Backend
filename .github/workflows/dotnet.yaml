@@ -42,13 +42,13 @@ jobs:
       #   working-directory: FoodManagerTest
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/Build_Artifact
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/Build_Artifact -r linux-x64 --self-contained true
         working-directory: FoodManagerApi
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: Artifact-${{ runner.os }}_${{ runner.arch }}-${{ github.sha }}
+          name: Artifact-${{ runner.os }}_${{ runner.arch }}-#${{ github.run_number }}-${{ github.sha }}
           path: ${{env.DOTNET_ROOT}}/Build_Artifact
 
   build-and-test-WINDOWS:
@@ -77,11 +77,11 @@ jobs:
       #   working-directory: FoodManagerTest
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o C:\Program Files\dotnet\Build_Artifact
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}\Build_Artifact -r win10-x64 --self-contained true
         working-directory: FoodManagerApi
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: Artifact-${{ runner.os }}_${{ runner.arch }}-${{ github.sha }}
-          path: C:\Program Files\dotnet\Build_Artifact
+          name: Artifact-${{ runner.os }}_${{ runner.arch }}-#${{ github.run_number }}-${{ github.sha }}
+          path: ${{env.DOTNET_ROOT}}\Build_Artifact
