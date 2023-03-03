@@ -42,7 +42,7 @@ jobs:
       #   working-directory: FoodManagerTest
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o /home/runner/work/FoodManager-Backend/FoodManager-Backend/FoodManagerApi/FoodManagerApi/bin/Release/
+        run: dotnet publish -c Release -o FoodManagerApi
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
