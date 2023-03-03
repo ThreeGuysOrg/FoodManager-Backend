@@ -42,7 +42,7 @@ jobs:
       #   working-directory: FoodManagerTest
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/Build_Artifact -r linux-x64 --self-contained true
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/Build_Artifact -r win10-x64 --self-contained true
         working-directory: FoodManagerApi
 
       - name: Upload artifact for deployment job
@@ -51,37 +51,37 @@ jobs:
           name: Artifact-${{ runner.os }}_${{ runner.arch }}-#${{ github.run_number }}-${{ github.sha }}
           path: ${{env.DOTNET_ROOT}}/Build_Artifact
 
-  build-and-test-WINDOWS:
-    runs-on: windows-latest
-    steps:
-      - name: Clone FoodManager-Backend repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+  # build-and-test-WINDOWS:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - name: Clone FoodManager-Backend repository
+  #       uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
 
-      - name: Setup .NET 6
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 6.0.x
+  #     - name: Setup .NET 6
+  #       uses: actions/setup-dotnet@v3
+  #       with:
+  #         dotnet-version: 6.0.x
 
-      - name: Restore dependencies
-        run: dotnet restore --interactive
-        working-directory: FoodManagerApi
+  #     - name: Restore dependencies
+  #       run: dotnet restore --interactive
+  #       working-directory: FoodManagerApi
 
-      - name: Build
-        run: dotnet build --no-restore --configuration Release
-        working-directory: FoodManagerApi
+  #     - name: Build
+  #       run: dotnet build --no-restore --configuration Release
+  #       working-directory: FoodManagerApi
 
-      # - name: Test
-      #   run: dotnet test --no-build --verbosity normal
-      #   working-directory: FoodManagerTest
+  #     # - name: Test
+  #     #   run: dotnet test --no-build --verbosity normal
+  #     #   working-directory: FoodManagerTest
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}\Build_Artifact -r win10-x64 --self-contained true
-        working-directory: FoodManagerApi
+  #     - name: dotnet publish
+  #       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}\Build_Artifact -r win10-x64 --self-contained true
+  #       working-directory: FoodManagerApi
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
-        with:
-          name: Artifact-${{ runner.os }}_${{ runner.arch }}-#${{ github.run_number }}-${{ github.sha }}
-          path: ${{env.DOTNET_ROOT}}\Build_Artifact
+  #     - name: Upload artifact for deployment job
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: Artifact-${{ runner.os }}_${{ runner.arch }}-#${{ github.run_number }}-${{ github.sha }}
+  #         path: ${{env.DOTNET_ROOT}}\Build_Artifact
