@@ -34,7 +34,7 @@ jobs:
         working-directory: FoodManagerApi
 
       - name: Build
-        run: dotnet build --configuration Release --os linux-x64
+        run: dotnet build --configuration Release
         working-directory: FoodManagerApi
 
       # - name: Test
