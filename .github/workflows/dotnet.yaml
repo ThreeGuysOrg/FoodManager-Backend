@@ -26,12 +26,15 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
-      - name: Format code style
-        run: dotnet format --verbosity normal
-        working-directory: FoodManagerApi
-
       - name: Restore dependencies
         run: dotnet restore --interactive
+        working-directory: FoodManagerApi
+
+      - name: Format code style
+        run: |
+          dotnet format whitespace --verbosity normal
+          dotnet format style --verbosity normal
+          dotnet format analyzers --verbosity normal
         working-directory: FoodManagerApi
 
       - name: Build
