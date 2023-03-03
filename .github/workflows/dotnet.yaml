@@ -15,8 +15,8 @@ on:
       - "README.md"
 
 jobs:
-  build:
-    runs-on: windows-latest
+  build-and-test-ubuntu:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Clone FoodManager-Backend repository
@@ -34,7 +34,7 @@ jobs:
         working-directory: FoodManagerApi
 
       - name: Build
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release --os linux-x64
         working-directory: FoodManagerApi
 
       # - name: Test
@@ -42,11 +42,11 @@ jobs:
       #   working-directory: FoodManagerTest
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}\Build_Artifact
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/Build_Artifact
         working-directory: FoodManagerApi
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: Artifact-$GITHUB_RUN_NUMBER
-          path: ${{env.DOTNET_ROOT}}\Build_Artifact
+          name: Artifact-${{env.RUNNER_OS}}-${{env.GITHUB_RUN_NUMBER}}-${{env.GITHUB_REF}}
+          path: ${{env.DOTNET_ROOT}}/Build_Artifact
