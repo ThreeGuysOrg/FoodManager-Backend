@@ -1,4 +1,4 @@
-name: Build
+name: Tests
 
 on:
   push:
@@ -38,23 +38,3 @@ jobs:
       # - name: Test
       #   run: dotnet test --no-build --verbosity normal
       #   working-directory: FoodManagerTest
-
-      - name: Publish build artifact (Linux)
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/Build_Linux -r linux-x64 --self-contained false
-        working-directory: FoodManagerApi
-
-      - name: Upload artifact (Linux)
-        uses: actions/upload-artifact@v3
-        with:
-          name: Linux-artifact-#${{ github.run_number }}-${{ github.sha }}
-          path: ${{env.DOTNET_ROOT}}/Build_Linux
-
-      - name: Publish build artifact (Windows)
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/Build_Windows -r win10-x64 --self-contained false
-        working-directory: FoodManagerApi
-
-      - name: Upload artifact (Windows)
-        uses: actions/upload-artifact@v3
-        with:
-          name: Windows-artifact-#${{ github.run_number }}-${{ github.sha }}
-          path: ${{env.DOTNET_ROOT}}/Build_Windows
