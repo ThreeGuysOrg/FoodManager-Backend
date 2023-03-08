@@ -6,7 +6,7 @@
 [![Sonarcloud analysis](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/sonar.yaml/badge.svg)](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/sonar.yaml)
 [![Github Issues](https://img.shields.io/github/issues/ThreeGuysOrg/FoodManager-Backend?color=yellow&label=Issues&logo=github)](https://github.com/ThreeGuysOrg/FoodManager-Backend/issues)
 [![Github Pull-Requests](https://img.shields.io/github/issues-pr/ThreeGuysOrg/FoodManager-Backend?color=purple&label=Pull%20Requests&logo=github)](https://github.com/ThreeGuysOrg/FoodManager-Backend/pulls)
-[![Github Contributors](https://img.shields.io/github/contributors/ThreeGuysOrg/FoodManager-Backend?color=pink&label=Contributors&logo=github)](https://github.com/orgs/ThreeGuysOrg/people)
+[![Github Contributors](https://img.shields.io/github/contributors/ThreeGuysOrg/FoodManager-Backend?color=pink&label=Contributors&logo=github)](https://github.com/ThreeGuysOrg/FoodManager-Backend/graphs/contributors)
 [![License](https://img.shields.io/github/license/ThreeGuysOrg/FoodManager-Backend?color=blue&label=License&logo=github)](LICENSE)
 
 Backend repository documentation.
