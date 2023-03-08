@@ -12,7 +12,7 @@ on:
       - "README.md"
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
