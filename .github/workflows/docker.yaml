@@ -27,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:0.0.2-#${{ github.run_number }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:0.0.2-run_${{ github.run_number }}
