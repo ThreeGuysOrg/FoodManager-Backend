@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Clone FoodManager-Backend repository
         uses: actions/checkout@v3
 
       - name: Login to Docker Hub
@@ -37,14 +37,14 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build
         uses: docker/build-push-action@v4
         with:
           push: false
           tags: build_${{ github.sha }}
         if: github.event_name == 'pull_request'
 
-      - name: Build and push
+      - name: Push
         uses: docker/build-push-action@v4
         with:
           push: true
