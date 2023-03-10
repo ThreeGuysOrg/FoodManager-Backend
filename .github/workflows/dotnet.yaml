@@ -2,10 +2,16 @@ name: Build
 
 on:
   pull_request:
-    branches: [main, stage, develop]
+    branches: [main, develop]
     types: [opened, synchronize, reopened]
     paths-ignore:
       - "README.md"
+      - "README/*.png"
+      - "README/*.svg"
+      - "README/*.jpeg"
+      - "README/*.jpg"
+      - "README/*.md"
+      - "LICENSE"
 
 jobs:
   build:
@@ -28,10 +34,6 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration Release
         working-directory: FoodManagerApi
-
-      # - name: Test
-      #   run: dotnet test --no-build --verbosity normal
-      #   working-directory: FoodManagerTest
 
       - name: Publish build artifact (Linux)
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/Build_Linux -r linux-x64 --self-contained false
