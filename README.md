@@ -4,6 +4,7 @@
 [![Test](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/dotnet-test.yaml/badge.svg)](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/dotnet-test.yaml)
 [![Code Style Validation](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/linter.yaml/badge.svg)](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/linter.yaml)
 [![Sonarcloud analysis](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/sonar.yaml/badge.svg)](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/sonar.yaml)
+[![Docker](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/docker.yaml/badge.svg)](https://github.com/ThreeGuysOrg/FoodManager-Backend/actions/workflows/docker.yaml)
 [![Github Issues](https://img.shields.io/github/issues/ThreeGuysOrg/FoodManager-Backend?color=yellow&label=Issues&logo=github)](https://github.com/ThreeGuysOrg/FoodManager-Backend/issues)
 [![Github Pull-Requests](https://img.shields.io/github/issues-pr/ThreeGuysOrg/FoodManager-Backend?color=purple&label=Pull%20Requests&logo=github)](https://github.com/ThreeGuysOrg/FoodManager-Backend/pulls)
 [![Github Contributors](https://img.shields.io/github/contributors/ThreeGuysOrg/FoodManager-Backend?color=pink&label=Contributors&logo=github)](https://github.com/ThreeGuysOrg/FoodManager-Backend/graphs/contributors)
